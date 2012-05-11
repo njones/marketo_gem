@@ -123,16 +123,14 @@ module Rapleaf
               attributes << {:attr_name => name, :attr_type => 'string', :attr_value => value}
             end
             
-            send_records << {:lead_record => 
-              { "Email" => lead_record.email, 
-                :lead_attribute_list => 
-                  { :attribute => attributes }
-              }
+            send_records << {
+              "Email" => lead_record.email, 
+              :lead_attribute_list => { :attribute => attributes }
             }
           end
           
           response = send_request("ns1:paramsSyncMultipleLeads", {
-                :lead_record_list => send_records }) # an array of lead records
+                :lead_record_list => { :lead_record => send_records }}) # an array of lead records
           
           return response
         rescue Exception => e
