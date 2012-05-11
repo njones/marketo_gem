@@ -1,4 +1,5 @@
 Gem::Specification.new do |gem|
+  gem.date        = "2012-05-11"
   gem.name        = "njones-marketo"
   gem.summary     = "A client for using the marketo API"
   gem.description = <<-EOF
@@ -12,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.files        = Dir['lib/**/*.rb']
   gem.require_path = ['lib']
   gem.test_files   = Dir['spec/**/*_spec.rb']
-  gem.version      = "1.2.5"
+  gem.version      = "1.2.6"
   gem.has_rdoc     = true
   gem.rdoc_options << '--title' << 'Marketo Client Gem' << '--main' << 'Rapleaf::Marketo::Client'
 
